@@ -11,6 +11,10 @@
   src: url(../public/Lausanne-500.woff2);
 }
 
+.agence{
+  font-size: 19vw;
+  line-height: 15vw;
+}
 
 body{
   background-color: #111;
