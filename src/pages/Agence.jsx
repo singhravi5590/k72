@@ -31,13 +31,17 @@ const Agence = () => {
       scrollTrigger:{
         trigger:imageDivRef.current,
         start : 'top 28%',
-        end : 'top -100%',
-        scrub : true,
+        end : 'top -70%',
         pin : true,
+        pinSpacing : true,
+        pinReparent : true,
+        pinType : 'transform',
+        scrub : 1,
+        anticipatePin : 1,
+        invalidateOnRefresh : true,
         onUpdate : function(elem){
           let imageProgress = Math.floor(elem.progress * imageArray.length);
           if(imageArray.length > imageProgress){
-            console.log("Hello")
             imageRef.current.src = imageArray[imageProgress];
           }
           else {
@@ -50,8 +54,8 @@ const Agence = () => {
 
   return (
     <div>
-      <div className='section-1'>
-        <div ref={imageDivRef} className='h-[20vw] overflow-hidden rounded-4xl w-[15vw] absolute bg-red-500 top-55 left-[31vw]'>
+      <div className='section-1 py-1'>
+        <div ref={imageDivRef} className='h-[20vw] overflow-hidden rounded-4xl w-[15vw] absolute bg-red-500 top-56 left-[31vw]'>
           <img ref={imageRef} className='h-full object-cover w-full' src="https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg" alt="" />
         </div>
 
